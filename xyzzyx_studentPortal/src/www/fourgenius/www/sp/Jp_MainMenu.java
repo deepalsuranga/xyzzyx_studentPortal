@@ -51,7 +51,7 @@ public class Jp_MainMenu extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
 
         lb_image_load.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lb_image_load.setIcon(new javax.swing.ImageIcon(getClass().getResource("/java2s.jpg"))); // NOI18N
+        lb_image_load.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/h.jpg"))); // NOI18N
         lb_image_load.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lb_image_load.setMaximumSize(new java.awt.Dimension(413, 531));
         lb_image_load.setMinimumSize(new java.awt.Dimension(413, 531));

@@ -11,7 +11,7 @@ package www.fourgenius.www.sp;
  */
 public class Jf_MainFrame extends javax.swing.JFrame {
 
-    /**
+    /*
      * Creates new form jf_MainFrame
      */
     public Jf_MainFrame() {
