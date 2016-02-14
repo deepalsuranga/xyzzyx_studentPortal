@@ -7,6 +7,7 @@ package www.fourgenius.www.sp;
 
 import FourGenius.MC_JavaDataBaseConnection;
 import java.awt.Color;
+import java.awt.Event;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -324,6 +325,12 @@ public class student_login extends javax.swing.JFrame {
 //            Logger.getLogger(student_login.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 
+        if (evt.getKeyCode() == Event.ENTER) {
+            jLabel4.setBorder(createLineBorder2);
+
+            login_method();
+        }
+
     }//GEN-LAST:event_pf_user_passwordKeyPressed
 
     private void tf_user_emailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tf_user_emailKeyTyped
@@ -371,10 +378,8 @@ public class student_login extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new student_login().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new student_login().setVisible(true);
         });
     }
 
@@ -403,8 +408,8 @@ public class student_login extends javax.swing.JFrame {
 
     public void login_method() {
 
-        loading.setVisible(true);
-        loading.setAlwaysOnTop(true);
+        //loading.setVisible(true);
+        //loading.setAlwaysOnTop(true);
         try {
             UserPassword = new String(pf_user_password.getPassword()).trim();
             userEmail = tf_user_email.getText().trim().toLowerCase();
@@ -416,27 +421,54 @@ public class student_login extends javax.swing.JFrame {
 
             System.out.println("password is " + UserPassword);
 
-            if (resultSet.next()) {
-                if (resultSet2.next()) {
-                    Jf_MainFrame mainFrame = new Jf_MainFrame();
-                    mainFrame.setVisible(true);
+            if (!tf_user_email.getText().isEmpty() & !pf_user_password.getPassword().toString().isEmpty()) {
 
-                    this.dispose();
+                if (resultSet.next()) {
+                    if (resultSet2.next()) {
+                        Jf_MainFrame mainFrame = new Jf_MainFrame();
+                        mainFrame.setVisible(true);
+                        mainFrame.loadEmail(userEmail);
+
+                        this.dispose();
+                    } else {
+                        //tf_user_email.setText(null);
+                        pf_user_password.selectAll();
+                        JOptionPane.showMessageDialog(this, "Your Password Incorrect");
+                        pf_user_password.grabFocus();
+                    }
+
                 } else {
+                    tf_user_email.selectAll();
                     //tf_user_email.setText(null);
-                    pf_user_password.selectAll();
-                    JOptionPane.showMessageDialog(this, "Your Password Incorrect");
-                    pf_user_password.grabFocus();
+                    //pf_user_password.setText(null);
+                    JOptionPane.showMessageDialog(this, "Your Email Incorrect");
+                    tf_user_email.grabFocus();
                 }
-
             } else {
-                tf_user_email.selectAll();
-                //tf_user_email.setText(null);
-                //pf_user_password.setText(null);
-                JOptionPane.showMessageDialog(this, "Your Email Incorrect");
-                tf_user_email.grabFocus();
+                JOptionPane.showMessageDialog(this, "Email Or Password Filed is Empty!");
             }
-
+//            try {
+//
+//                new Thread(new Runnable() {
+//
+//                    public void run() {
+//                        try {
+//                            for (int i = 0; i < 101; i++) {
+//                                if (i == 100) {
+////                            Jf_MainFrame ul = new Jf_MainFrame();
+////                            ul.setVisible(true);
+//                                    loading.dispose();
+//                                }
+//                                student_login.this.dispose();
+//                                Thread.sleep(50);
+//                            }
+//                        } catch (Exception e) {
+//                        }
+//                    }
+//                }).start();
+//
+//            } catch (Exception e) {
+//            }
             resultSet.close();
             MC_JavaDataBaseConnection.myConnection().close();
 

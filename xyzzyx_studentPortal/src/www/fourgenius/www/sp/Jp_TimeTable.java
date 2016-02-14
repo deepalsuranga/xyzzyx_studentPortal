@@ -11,11 +11,36 @@ package www.fourgenius.www.sp;
  */
 public class Jp_TimeTable extends javax.swing.JPanel {
 
-    /**
+    /*
      * Creates new form jp_TimeTable
      */
     public Jp_TimeTable() {
         initComponents();
+
+        try {
+            String[] ar = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+
+            for (int i = 0; i < 7; i++) {
+                jTable1.getColumnModel().getColumn(i).setHeaderValue(ar[i]);
+            }
+        } catch (Exception e) {
+        }
+//            jTable1.getColumnModel().getColumn(0).setHeaderValue(ar[0]);
+//            jTable1.getColumnModel().getColumn(1).setHeaderValue(ar[1]);
+//            jTable1.getColumnModel().getColumn(2).setHeaderValue(ar[2]);
+//            jTable1.getColumnModel().getColumn(3).setHeaderValue(ar[3]);
+//            jTable1.getColumnModel().getColumn(4).setHeaderValue(ar[4]);
+//            jTable1.getColumnModel().getColumn(5).setHeaderValue(ar[5]);
+//            jTable1.getColumnModel().getColumn(6).setHeaderValue(ar[6]);
+//            System.out.println(Arrays.toString(ar));
+
+//        jTable1.getColumnModel().getColumn(0).setHeaderValue("Monday");
+//        jTable1.getColumnModel().getColumn(1).setHeaderValue("Tuesday");
+//        jTable1.getColumnModel().getColumn(2).setHeaderValue("Wednesday");
+//        jTable1.getColumnModel().getColumn(3).setHeaderValue("Thursday");
+//        jTable1.getColumnModel().getColumn(4).setHeaderValue("Friday");
+//        jTable1.getColumnModel().getColumn(5).setHeaderValue("Saturday");
+//        jTable1.getColumnModel().getColumn(6).setHeaderValue("Sunday");
     }
 
     /**
@@ -28,7 +53,10 @@ public class Jp_TimeTable extends javax.swing.JPanel {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
+        setBackground(new java.awt.Color(186, 104, 200));
         setMaximumSize(new java.awt.Dimension(1366, 732));
         setMinimumSize(new java.awt.Dimension(1366, 732));
 
@@ -39,21 +67,39 @@ public class Jp_TimeTable extends javax.swing.JPanel {
             }
         });
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(jButton1)
-                .addContainerGap(1244, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1356, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(47, 47, 47)
                 .addComponent(jButton1)
-                .addContainerGap(662, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(229, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -73,11 +119,13 @@ public class Jp_TimeTable extends javax.swing.JPanel {
 //                admin_mainPanel.add(studentPanelM);
 //                revalidate();
 //            }
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

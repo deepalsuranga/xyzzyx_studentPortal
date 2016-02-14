@@ -5,6 +5,8 @@
  */
 package www.fourgenius.www.sp;
 
+import static www.fourgenius.www.sp.Jf_MainFrame.mainPanel;
+
 /**
  *
  * @author deepalsuranga
@@ -198,6 +200,11 @@ public class Jp_MainMenu extends javax.swing.JPanel {
         jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setBackground(new java.awt.Color(0, 230, 118));
         jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -253,8 +260,35 @@ public class Jp_MainMenu extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+
+       
+        
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+//        Jp_MyInformation myInformation = new Jp_MyInformation();
+//        try {
+//            if (myInformation == null) {
+//                mainPanel.removeAll();
+//                revalidate();
+//                myInformation = new Jp_MyInformation();
+//                myInformation.setVisible(true);
+//                mainPanel.add(myInformation);
+//                revalidate();
+//            } else {
+//                mainPanel.removeAll();
+//                revalidate();
+//                myInformation.repaint();
+//                myInformation.setVisible(true);
+//                mainPanel.add(myInformation);
+//                revalidate();
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+
+
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -109,24 +109,24 @@ public class Jf_loading extends javax.swing.JFrame {
 
     public void loadingpage() {
 
-        try {
-
-            new Thread(() -> {
-                try {
-                    for (int i = 0; i < 101; i++) {
-                        if (i == 100) {
-//                            Jf_MainFrame ul = new Jf_MainFrame();
-//                            ul.setVisible(true);
-                            this.dispose();
-                        }
-                        this.dispose();
-                        Thread.sleep(50);
-                    }
-                } catch (Exception e) {
-                }
-            }).start();
-
-        } catch (Exception e) {
-        }
+//        try {
+//
+//            new Thread(() -> {
+//                try {
+//                    for (int i = 0; i < 101; i++) {
+//                        if (i == 100) {
+////                            Jf_MainFrame ul = new Jf_MainFrame();
+////                            ul.setVisible(true);
+//                            this.dispose();
+//                        }
+//                        this.dispose();
+//                        Thread.sleep(50);
+//                    }
+//                } catch (Exception e) {
+//                }
+//            }).start();
+//
+//        } catch (Exception e) {
+//        }
     }
 }
