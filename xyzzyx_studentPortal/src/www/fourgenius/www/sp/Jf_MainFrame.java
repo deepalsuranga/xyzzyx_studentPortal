@@ -5,6 +5,8 @@
  */
 package www.fourgenius.www.sp;
 
+import javax.swing.ImageIcon;
+
 /**
  *
  * @author deepalsuranga
@@ -17,6 +19,7 @@ public class Jf_MainFrame extends javax.swing.JFrame {
     public Jf_MainFrame() {
         initComponents();
         firstLoad();
+        
     }
 
     /**
@@ -32,6 +35,7 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
+        lb_load_home = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,17 +70,33 @@ public class Jf_MainFrame extends javax.swing.JFrame {
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
+        lb_load_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_load_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/imagess/ic_home_white_24dp_1x.png"))); // NOI18N
+        lb_load_home.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_load_homeMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lb_load_homeMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lb_load_homeMouseExited(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(0, 1336, Short.MAX_VALUE)
+                .addComponent(lb_load_home, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1306, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lb_load_home, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         mainPanel.setBackground(new java.awt.Color(97, 97, 97));
@@ -113,6 +133,25 @@ public class Jf_MainFrame extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void lb_load_homeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_homeMouseEntered
+
+        lb_load_home.setIcon(new ImageIcon("src\\src\\imagess\\Home-24-rollover.png"));
+        lb_load_home.setToolTipText("Home");
+        
+    }//GEN-LAST:event_lb_load_homeMouseEntered
+
+    private void lb_load_homeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_homeMouseExited
+
+        lb_load_home.setIcon(new ImageIcon("src\\src\\imagess\\ic_home_white_24dp_1x.png"));
+        
+    }//GEN-LAST:event_lb_load_homeMouseExited
+
+    private void lb_load_homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_homeMouseClicked
+
+        firstLoad();
+        
+    }//GEN-LAST:event_lb_load_homeMouseClicked
 
     /**
      * @param args the command line arguments
@@ -153,28 +192,28 @@ public class Jf_MainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JLabel lb_load_home;
     public static javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 
-    
-
-    void firstLoad() {
-Jp_MainMenu studentPanelM = new Jp_MainMenu();
-        if (studentPanelM == null) {
+    static void firstLoad() {
+        Jp_MainMenu PanelA = new Jp_MainMenu();
+        if (PanelA == null) {
+            PanelA = new Jp_MainMenu();
             mainPanel.removeAll();
-            revalidate();
-            studentPanelM = new Jp_MainMenu();
-            studentPanelM.setVisible(true);
-            mainPanel.add(studentPanelM);
-            revalidate();
+            mainPanel.repaint();
+            mainPanel.revalidate();
+            mainPanel.add(PanelA);
+            mainPanel.repaint();
+            mainPanel.revalidate();
         } else {
             mainPanel.removeAll();
-            revalidate();
-            studentPanelM.setVisible(true);
-            mainPanel.add(studentPanelM);
-            revalidate();
+            mainPanel.repaint();
+            mainPanel.revalidate();
+            mainPanel.add(PanelA);
+            mainPanel.repaint();
+            mainPanel.revalidate();
         }
     }
 
-    
 }

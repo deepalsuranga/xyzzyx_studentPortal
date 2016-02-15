@@ -5,13 +5,15 @@
  */
 package www.fourgenius.www.sp;
 
+import static www.fourgenius.www.sp.Jf_MainFrame.mainPanel;
+
 /**
  *
  * @author deepalsuranga
  */
 public class Jp_MainMenu extends javax.swing.JPanel {
 
-    /**
+    /*
      * Creates new form jp_MainMenu
      */
     public Jp_MainMenu() {
@@ -38,10 +40,10 @@ public class Jp_MainMenu extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         lb_load_id = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        bt_examResult = new javax.swing.JButton();
+        bt_timeTable = new javax.swing.JButton();
+        bt_myInfoemation = new javax.swing.JButton();
+        bt_myPracticals = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(158, 158, 158));
         setMaximumSize(new java.awt.Dimension(1366, 732));
@@ -167,51 +169,51 @@ public class Jp_MainMenu extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        jButton1.setBackground(new java.awt.Color(0, 230, 118));
-        jButton1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
-        jButton1.setText("My Exams &  Results");
-        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_examResult.setBackground(new java.awt.Color(0, 230, 118));
+        bt_examResult.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_examResult.setForeground(new java.awt.Color(255, 255, 255));
+        bt_examResult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
+        bt_examResult.setText("My Exams &  Results");
+        bt_examResult.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_examResult.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_examResult.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
 
-        jButton2.setBackground(new java.awt.Color(0, 230, 118));
-        jButton2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
-        jButton2.setText("My Time Tables");
-        jButton2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton2.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        bt_timeTable.setBackground(new java.awt.Color(0, 230, 118));
+        bt_timeTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_timeTable.setForeground(new java.awt.Color(255, 255, 255));
+        bt_timeTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
+        bt_timeTable.setText("My Time Tables");
+        bt_timeTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_timeTable.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_timeTable.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_timeTable.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                bt_timeTableActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(0, 230, 118));
-        jButton3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
-        jButton3.setText("My Informations");
-        jButton3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton3.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        bt_myInfoemation.setBackground(new java.awt.Color(0, 230, 118));
+        bt_myInfoemation.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_myInfoemation.setForeground(new java.awt.Color(255, 255, 255));
+        bt_myInfoemation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
+        bt_myInfoemation.setText("My Informations");
+        bt_myInfoemation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_myInfoemation.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_myInfoemation.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_myInfoemation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                bt_myInfoemationActionPerformed(evt);
             }
         });
 
-        jButton4.setBackground(new java.awt.Color(0, 230, 118));
-        jButton4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
-        jButton4.setText("My Practicals");
-        jButton4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton4.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_myPracticals.setBackground(new java.awt.Color(0, 230, 118));
+        bt_myPracticals.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_myPracticals.setForeground(new java.awt.Color(255, 255, 255));
+        bt_myPracticals.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
+        bt_myPracticals.setText("My Practicals");
+        bt_myPracticals.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_myPracticals.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_myPracticals.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -219,21 +221,23 @@ public class Jp_MainMenu extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(bt_examResult, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bt_timeTable, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bt_myInfoemation, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(bt_myPracticals, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -247,53 +251,71 @@ public class Jp_MainMenu extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(98, 98, 98)
+                .addGap(99, 99, 99)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(220, Short.MAX_VALUE))
+                    .addComponent(bt_examResult, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_timeTable, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_myInfoemation, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_myPracticals, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(219, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void bt_timeTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_timeTableActionPerformed
 
-       
-        
-    }//GEN-LAST:event_jButton2ActionPerformed
+        Jp_TimeTable tt = new Jp_TimeTable();
+        if (tt == null) {
+            mainPanel.removeAll();
+            revalidate();
+            tt = new Jp_TimeTable();
+            tt.setVisible(true);
+            mainPanel.add(tt);
+            revalidate();
+            updateUI();
+        } else {
+            mainPanel.removeAll();
+            revalidate();
+            tt.setVisible(true);
+            mainPanel.add(tt);
+            revalidate();
+            updateUI();
+        }
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-//        Jp_MyInformation myInformation = new Jp_MyInformation();
-//        try {
-//            if (myInformation == null) {
-//                mainPanel.removeAll();
-//                revalidate();
-//                myInformation = new Jp_MyInformation();
-//                myInformation.setVisible(true);
-//                mainPanel.add(myInformation);
-//                revalidate();
-//            } else {
-//                mainPanel.removeAll();
-//                revalidate();
-//                myInformation.repaint();
-//                myInformation.setVisible(true);
-//                mainPanel.add(myInformation);
-//                revalidate();
-//            }
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
+    }//GEN-LAST:event_bt_timeTableActionPerformed
+
+    private void bt_myInfoemationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_myInfoemationActionPerformed
+        Jp_MyInformation myInformation = new Jp_MyInformation();
+        try {
+            if (myInformation == null) {
+
+                mainPanel.removeAll();
+                revalidate();
+                myInformation = new Jp_MyInformation();
+                myInformation.setVisible(true);
+                mainPanel.add(myInformation);
+                revalidate();
+
+            } else {
+                mainPanel.removeAll();
+                revalidate();
+                myInformation.setVisible(true);
+                mainPanel.add(myInformation);
+                revalidate();
+
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_bt_myInfoemationActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton bt_examResult;
+    private javax.swing.JButton bt_myInfoemation;
+    private javax.swing.JButton bt_myPracticals;
+    private javax.swing.JButton bt_timeTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
@@ -307,9 +329,9 @@ public class Jp_MainMenu extends javax.swing.JPanel {
     public static javax.swing.JLabel lb_load_name;
     // End of variables declaration//GEN-END:variables
 
-    public static void loadEmail(String load_email,String load_ID) {
+    public static void loadEmail(String load_email, String load_ID) {
         lb_load_email.setText(load_email);
-       
+
         //MC_JavaDataBaseConnection.myConnection().createStatement()
         lb_load_id.setText(load_ID);
     }
