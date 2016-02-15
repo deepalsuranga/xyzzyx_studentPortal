@@ -11,7 +11,6 @@ import java.awt.Event;
 import java.awt.event.KeyEvent;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.BorderFactory;
@@ -19,6 +18,7 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.Border;
+import www.fourgenius.www.foegetPassword.Jf_forgetPassword;
 
 /**
  *
@@ -59,6 +59,7 @@ public class student_login extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        lb_foegetPassword = new javax.swing.JLabel();
         lb_non_password = new javax.swing.JLabel();
         lb_non_email = new javax.swing.JLabel();
         login_ongs = new javax.swing.JLabel();
@@ -121,6 +122,11 @@ public class student_login extends javax.swing.JFrame {
         tf_user_email.setMaximumSize(new java.awt.Dimension(205, 30));
         tf_user_email.setMinimumSize(new java.awt.Dimension(205, 30));
         tf_user_email.setOpaque(false);
+        tf_user_email.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                tf_user_emailMouseEntered(evt);
+            }
+        });
         tf_user_email.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 tf_user_emailKeyPressed(evt);
@@ -139,6 +145,11 @@ public class student_login extends javax.swing.JFrame {
         pf_user_password.setMaximumSize(new java.awt.Dimension(195, 30));
         pf_user_password.setMinimumSize(new java.awt.Dimension(195, 30));
         pf_user_password.setOpaque(false);
+        pf_user_password.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                pf_user_passwordMouseEntered(evt);
+            }
+        });
         pf_user_password.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 pf_user_passwordKeyPressed(evt);
@@ -194,6 +205,19 @@ public class student_login extends javax.swing.JFrame {
         });
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(832, 634, 142, 41));
         jPanel2.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(1270, 530, 50, 50));
+
+        lb_foegetPassword.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_foegetPassword.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/Help-32.png"))); // NOI18N
+        lb_foegetPassword.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_foegetPassword.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lb_foegetPasswordMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lb_foegetPasswordMouseEntered(evt);
+            }
+        });
+        jPanel2.add(lb_foegetPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 630, 30, 40));
         jPanel2.add(lb_non_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 620, 230, 10));
         jPanel2.add(lb_non_email, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 620, 250, 10));
 
@@ -274,10 +298,23 @@ public class student_login extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel4MouseExited
     Border createLineBorder2 = BorderFactory.createLineBorder(Color.GREEN);
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-
         jLabel4.setBorder(createLineBorder2);
+        if (!tf_user_email.getText().isEmpty()) {
+            String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+            String email1 = tf_user_email.getText();
+            Boolean result = email1.matches(EMAIL_REGEX);
+            if (result) {
 
-        login_method();
+                login_method();
+            } else {
+                JOptionPane.showMessageDialog(this, "Please Enter Valid Email.", "WARNING!", JOptionPane.WARNING_MESSAGE);
+                tf_user_email.grabFocus();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please Notice Email is Empty. Email is Required for Login Student Portal", "WARNING!", JOptionPane.WARNING_MESSAGE);
+
+        }
+
 
     }//GEN-LAST:event_jLabel4MouseClicked
 
@@ -350,7 +387,52 @@ public class student_login extends javax.swing.JFrame {
 
     }//GEN-LAST:event_pf_user_passwordKeyTyped
 
-    /**
+    private void lb_foegetPasswordMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_foegetPasswordMouseClicked
+        if (!tf_user_email.getText().isEmpty()) {
+            String EMAIL_REGEX = "^[\\w-_\\.+]*[\\w-_\\.]\\@([\\w]+\\.)+[\\w]+[\\w]$";
+            String email1 = tf_user_email.getText();
+            Boolean result = email1.matches(EMAIL_REGEX);
+            if (result) {
+
+                Jf_forgetPassword jf_forgetPassword = new Jf_forgetPassword();
+                
+                    jf_forgetPassword.loadEmail(email1.toLowerCase().trim());
+                    jf_forgetPassword.setVisible(true);
+                    jf_forgetPassword.setAlwaysOnTop(true);
+                
+                    
+                
+            } else {
+                JOptionPane.showMessageDialog(this, "Please Enter Valid Email.", "WARNING!", JOptionPane.WARNING_MESSAGE);
+                tf_user_email.grabFocus();
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Please Notice Email is Empty!\n\tEmail is Required", "WARNING!", JOptionPane.WARNING_MESSAGE);
+
+        }
+
+
+    }//GEN-LAST:event_lb_foegetPasswordMouseClicked
+
+    private void lb_foegetPasswordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_foegetPasswordMouseEntered
+
+        lb_foegetPassword.setToolTipText("Forget Password!");
+        
+    }//GEN-LAST:event_lb_foegetPasswordMouseEntered
+
+    private void tf_user_emailMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_user_emailMouseEntered
+
+        jLabel1.setToolTipText("Enter Your Email");
+        
+    }//GEN-LAST:event_tf_user_emailMouseEntered
+
+    private void pf_user_passwordMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pf_user_passwordMouseEntered
+
+        jLabel2.setToolTipText("Enter Your Password");
+        
+    }//GEN-LAST:event_pf_user_passwordMouseEntered
+
+    /*
      * @param args the command line arguments
      */
     public static void main(String args[]) {
@@ -394,6 +476,7 @@ public class student_login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lb_foegetPassword;
     private javax.swing.JLabel lb_non_email;
     private javax.swing.JLabel lb_non_password;
     private javax.swing.JLabel login_ongs;
@@ -433,7 +516,7 @@ public class student_login extends javax.swing.JFrame {
                     } else {
                         //tf_user_email.setText(null);
                         pf_user_password.selectAll();
-                        JOptionPane.showMessageDialog(this, "Your Password Incorrect");
+                        JOptionPane.showMessageDialog(this, "Your password incorrect");
                         pf_user_password.grabFocus();
                     }
 
@@ -441,11 +524,12 @@ public class student_login extends javax.swing.JFrame {
                     tf_user_email.selectAll();
                     //tf_user_email.setText(null);
                     //pf_user_password.setText(null);
-                    JOptionPane.showMessageDialog(this, "Your Email Incorrect");
+                    JOptionPane.showMessageDialog(this, "Your email incorrect");
                     tf_user_email.grabFocus();
                 }
             } else {
-                JOptionPane.showMessageDialog(this, "Email Or Password Filed is Empty!");
+                JOptionPane.showMessageDialog(this, "Email & password Filed is empty!");
+                tf_user_email.grabFocus();
             }
 //            try {
 //
@@ -480,14 +564,14 @@ public class student_login extends javax.swing.JFrame {
 
     public void empty_is_Username() {
         if (tf_user_email.getText().isEmpty()) {
-            lb_non_email.setText("Requred Email Filed!");
+            lb_non_email.setText("Requred email filed!");
             tf_user_email.grabFocus();
         }
     }
 
     public void empty_is_Password() {
         if (pf_user_password.getPassword().toString().isEmpty()) {
-            lb_non_password.setText("Requred Password Field!");
+            lb_non_password.setText("Requred password field!");
             pf_user_password.grabFocus();
         }
     }

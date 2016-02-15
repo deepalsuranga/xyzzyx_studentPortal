@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package www.fourgenius.www.sp;
+package test;
 
 import static www.fourgenius.www.sp.Jf_MainFrame.mainPanel;
 

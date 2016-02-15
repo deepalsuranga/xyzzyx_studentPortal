@@ -5,7 +5,7 @@
  */
 package www.fourgenius.www.sp;
 
-import FourGenius.MC_JavaDataBaseConnection;
+import test.Jp_MainMenu;
 
 /**
  *
@@ -342,16 +342,16 @@ public class Jf_MainFrame extends javax.swing.JFrame {
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
 
-        student_login login=new student_login();
+        student_login login = new student_login();
         login.setVisible(true);
         this.dispose();
-        
-        
+
+
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
 
-         Jp_TimeTable timeTable= new Jp_TimeTable();
+        Jp_TimeTable timeTable = new Jp_TimeTable();
         try {
             if (timeTable == null) {
                 mainPanel.removeAll();
@@ -371,7 +371,7 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -400,8 +400,7 @@ public class Jf_MainFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        
-        
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -462,29 +461,30 @@ public class Jf_MainFrame extends javax.swing.JFrame {
     public static javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
 
-    Jp_MainMenu studentPanelM=new  Jp_MainMenu();
+    Jp_MainMenu studentPanelM = new Jp_MainMenu();
+
     void firstLoad() {
-        
+
         if (studentPanelM == null) {
-                mainPanel.removeAll();
-                revalidate();
-                studentPanelM = new Jp_MainMenu();
-                studentPanelM.setVisible(true);
-                mainPanel.add(studentPanelM);
-                revalidate();
-            } else {
-                mainPanel.removeAll();
-                revalidate();
-                studentPanelM.setVisible(true);
-                mainPanel.add(studentPanelM);
-                revalidate();
-            }
+            mainPanel.removeAll();
+            revalidate();
+            studentPanelM = new Jp_MainMenu();
+            studentPanelM.setVisible(true);
+            mainPanel.add(studentPanelM);
+            revalidate();
+        } else {
+            mainPanel.removeAll();
+            revalidate();
+            studentPanelM.setVisible(true);
+            mainPanel.add(studentPanelM);
+            revalidate();
+        }
     }
-    
-    void loadEmail(String email){
-    lb_load_email.setText(email);
-    String idLoad=null;
+
+    void loadEmail(String email) {
+        lb_load_email.setText(email);
+        String idLoad = null;
         //MC_JavaDataBaseConnection.myConnection().createStatement()
-    lb_load_id.setText(idLoad);
+        lb_load_id.setText(idLoad);
     }
 }
