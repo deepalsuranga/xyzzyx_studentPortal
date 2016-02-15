@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package test;
-
-import static www.fourgenius.www.sp.Jf_MainFrame.mainPanel;
+package www.fourgenius.www.sp;
 
 /**
  *
@@ -304,8 +302,15 @@ public class Jp_MainMenu extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JLabel lb_image_load;
-    private javax.swing.JLabel lb_load_email;
-    private javax.swing.JLabel lb_load_id;
-    private javax.swing.JLabel lb_load_name;
+    public static javax.swing.JLabel lb_load_email;
+    public static javax.swing.JLabel lb_load_id;
+    public static javax.swing.JLabel lb_load_name;
     // End of variables declaration//GEN-END:variables
+
+    public static void loadEmail(String load_email,String load_ID) {
+        lb_load_email.setText(load_email);
+       
+        //MC_JavaDataBaseConnection.myConnection().createStatement()
+        lb_load_id.setText(load_ID);
+    }
 }

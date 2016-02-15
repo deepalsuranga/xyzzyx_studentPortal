@@ -8,7 +8,6 @@ package www.fourgenius.www.foegetPassword;
 import FourGenius.MC_JavaDataBaseConnection;
 import java.sql.ResultSet;
 import javax.swing.ImageIcon;
-import static www.fourgenius.www.sp.Jf_MainFrame.lb_load_email;
 
 /**
  *
@@ -209,37 +208,45 @@ public class Jf_forgetPassword extends javax.swing.JFrame {
 
         lb_wait.setText("Please Wait..");
         String toMail = tf_forgetEmail.getText().toLowerCase().trim();
-        String ID="Not Found ID";
+        String ID = "Not Found ID";
+        String Password = "Not Found Password";
         try {
             String emailSQL = "SELECT * FROM stu_user_info where stu_user_info_email='" + toMail + "'";
             ResultSet rs;
             rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(emailSQL);
             if (rs.next()) {
                 ID = rs.getString("stu_user_info_id");
+                Password = rs.getString("stu_user_info_password");
+
                 jLabel3.setText(ID);
                 System.out.println("ID: " + ID);
             }
             Student_SendMailSSL mailSSL = new Student_SendMailSSL();
-            mailSSL.sendingSSL(toMail, toMail, "Hello!"+ID);
+            mailSSL.sendingSSL(toMail, toMail, ""
+                    + "Student Portal Information\n"
+                    + "\n\t Your Student ID : " + ID + ""
+                    + "\n\n\t Student Portal Username : " + toMail + ""
+                    + "\n\t Student Portal Password : " + Password + ""
+                    + "\n\n Thank You Using 4Genius(www.fourgenius.com) System.");
             lb_correct.setIcon(new ImageIcon("src\\src\\images\\img_login\\correctBox.png"));
             tf_forgetEmail.setEditable(false);
             try {
 
-            new Thread(() -> {
-                try {
-                    for (int i = 0; i < 101; i++) {
-                        if (i == 100) {
-                            lb_correct.setIcon(null);
+                new Thread(() -> {
+                    try {
+                        for (int i = 0; i < 101; i++) {
+                            if (i == 100) {
+                                lb_correct.setIcon(null);
+                            }
+                            Thread.sleep(50);
                         }
-                        Thread.sleep(50);
+                    } catch (Exception e) {
                     }
-                } catch (Exception e) {
-                }
-            }).start();
+                }).start();
 
-        } catch (Exception e) {
-            
-        }
+            } catch (Exception e) {
+
+            }
             lb_wait.setText("");
         } catch (Exception e) {
         }
@@ -322,5 +329,5 @@ public class Jf_forgetPassword extends javax.swing.JFrame {
         //MC_JavaDataBaseConnection.myConnection().createStatement()
         //tf_forgetEmail.setText(idLoad);
     }
-    
+
 }

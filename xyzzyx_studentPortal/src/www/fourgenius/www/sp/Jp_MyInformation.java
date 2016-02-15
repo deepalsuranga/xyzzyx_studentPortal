@@ -79,6 +79,11 @@ public class Jp_MyInformation extends javax.swing.JPanel {
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/Home-32.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -461,6 +466,28 @@ public class Jp_MyInformation extends javax.swing.JPanel {
         
 
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+
+        Jp_MainMenu studentPanelM=new Jp_MainMenu();
+        if (studentPanelM == null) {
+            
+            Jf_MainFrame.mainPanel.removeAll();
+            revalidate();
+            studentPanelM = new Jp_MainMenu();
+            studentPanelM.setVisible(true);
+            Jf_MainFrame.mainPanel.add(studentPanelM);
+            revalidate();
+        } else {
+            Jf_MainFrame.mainPanel.removeAll();
+            revalidate();
+            studentPanelM.setVisible(true);
+            Jf_MainFrame.mainPanel.add(studentPanelM);
+            revalidate();
+       
+    }
+        
+    }//GEN-LAST:event_jLabel1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -510,7 +510,7 @@ public class student_login extends javax.swing.JFrame {
                     if (resultSet2.next()) {
                         Jf_MainFrame mainFrame = new Jf_MainFrame();
                         mainFrame.setVisible(true);
-                        mainFrame.loadEmail(userEmail);
+                        Jp_MainMenu.loadEmail(userEmail, userEmail);
 
                         this.dispose();
                     } else {
