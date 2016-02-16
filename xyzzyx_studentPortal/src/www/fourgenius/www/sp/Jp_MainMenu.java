@@ -18,6 +18,8 @@ public class Jp_MainMenu extends javax.swing.JPanel {
      */
     public Jp_MainMenu() {
         initComponents();
+        
+        
     }
 
     /**

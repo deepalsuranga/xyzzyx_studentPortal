@@ -5,7 +5,11 @@
  */
 package www.fourgenius.www.sp;
 
+import java.util.Arrays;
+import java.util.Vector;
 import javax.swing.ImageIcon;
+import static www.fourgenius.www.sp.Jp_MainMenu.lb_load_email;
+import static www.fourgenius.www.sp.Jp_MainMenu.lb_load_id;
 
 /**
  *
@@ -13,13 +17,16 @@ import javax.swing.ImageIcon;
  */
 public class Jf_MainFrame extends javax.swing.JFrame {
 
+    public static String Emailget;
     /*
      * Creates new form jf_MainFrame
      */
+
     public Jf_MainFrame() {
         initComponents();
         firstLoad();
-        
+        Emailget = lb_load_MainEmail.getText();
+
     }
 
     /**
@@ -34,28 +41,35 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lb_load_MainEmail = new javax.swing.JLabel();
         lb_load_home = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1366, 768));
         setMinimumSize(new java.awt.Dimension(1366, 768));
         setUndecorated(true);
         getContentPane().setLayout(new java.awt.CardLayout());
 
         jPanel2.setBackground(new java.awt.Color(31, 31, 31));
+        jPanel2.setMaximumSize(new java.awt.Dimension(1366, 30));
+        jPanel2.setMinimumSize(new java.awt.Dimension(1366, 30));
 
         jPanel4.setBackground(new java.awt.Color(255, 87, 34));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("X");
-        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        lb_load_MainEmail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lb_load_MainEmail.setForeground(new java.awt.Color(255, 255, 255));
+        lb_load_MainEmail.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        lb_load_MainEmail.setText("Load Email Address");
+        lb_load_MainEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        lb_load_MainEmail.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                lb_load_MainEmailMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                lb_load_MainEmailMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                lb_load_MainEmailMouseExited(evt);
             }
         });
 
@@ -63,11 +77,13 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addComponent(lb_load_MainEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 265, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(lb_load_MainEmail, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         lb_load_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -90,13 +106,13 @@ public class Jf_MainFrame extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addComponent(lb_load_home, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1306, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 1061, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(lb_load_home, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(lb_load_home, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         mainPanel.setBackground(new java.awt.Color(97, 97, 97));
@@ -125,33 +141,44 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-
-        student_login login = new student_login();
-        login.setVisible(true);
-        this.dispose();
-
-
-    }//GEN-LAST:event_jLabel1MouseClicked
-
     private void lb_load_homeMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_homeMouseEntered
 
         lb_load_home.setIcon(new ImageIcon("src\\src\\imagess\\Home-24-rollover.png"));
         lb_load_home.setToolTipText("Home");
-        
+
     }//GEN-LAST:event_lb_load_homeMouseEntered
 
     private void lb_load_homeMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_homeMouseExited
 
         lb_load_home.setIcon(new ImageIcon("src\\src\\imagess\\ic_home_white_24dp_1x.png"));
-        
+
     }//GEN-LAST:event_lb_load_homeMouseExited
 
     private void lb_load_homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_homeMouseClicked
 
         firstLoad();
-        
+
     }//GEN-LAST:event_lb_load_homeMouseClicked
+
+    private void lb_load_MainEmailMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_MainEmailMouseEntered
+
+        lb_load_MainEmail.setText("Logout");
+
+    }//GEN-LAST:event_lb_load_MainEmailMouseEntered
+
+    private void lb_load_MainEmailMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_MainEmailMouseExited
+
+        lb_load_MainEmail.setText(Emailget);
+
+    }//GEN-LAST:event_lb_load_MainEmailMouseExited
+
+    private void lb_load_MainEmailMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_MainEmailMouseClicked
+
+        student_login login = new student_login();
+        login.setVisible(true);
+        this.dispose();
+
+    }//GEN-LAST:event_lb_load_MainEmailMouseClicked
 
     /**
      * @param args the command line arguments
@@ -188,10 +215,10 @@ public class Jf_MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    public static javax.swing.JLabel lb_load_MainEmail;
     private javax.swing.JLabel lb_load_home;
     public static javax.swing.JPanel mainPanel;
     // End of variables declaration//GEN-END:variables
@@ -216,4 +243,12 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         }
     }
 
+    public static void loadEmailM(String load_email, String load_ID) {
+        Emailget = load_email;
+        lb_load_MainEmail.setText(load_email);
+
+    }
+    /*
+     
+     */
 }

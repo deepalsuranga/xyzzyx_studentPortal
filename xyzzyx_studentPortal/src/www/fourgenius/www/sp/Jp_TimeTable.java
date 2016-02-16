@@ -5,6 +5,10 @@
  */
 package www.fourgenius.www.sp;
 
+import java.awt.Color;
+import java.util.Arrays;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author deepalsuranga
@@ -17,12 +21,24 @@ public class Jp_TimeTable extends javax.swing.JPanel {
     public Jp_TimeTable() {
         initComponents();
 
+        jTable1.setBackground(Color.yellow);
         try {
-            String[] ar = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+            String[] ar = {"Subject", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
-            for (int i = 0; i < 7; i++) {
+            for (int i = 0; i <= 7; i++) {
                 jTable1.getColumnModel().getColumn(i).setHeaderValue(ar[i]);
             }
+            int j = 10;
+            String col[] = {"Pos", "Team", "P", "W", "L", "D", "MP", "GF", "GA", "GD"};
+
+            
+            DefaultTableModel tableModel = (DefaultTableModel)jTable1.getModel();
+            System.out.println("helllo"+ Arrays.toString(col));
+            int i=col.length;
+            for (int k = 0; k <= i; k++) {
+                tableModel.addRow(col);
+            }
+            //tableModel.addRow(col[0]);
         } catch (Exception e) {
         }
 //            jTable1.getColumnModel().getColumn(0).setHeaderValue(ar[0]);
@@ -69,10 +85,7 @@ public class Jp_TimeTable extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7"
