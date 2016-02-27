@@ -22,25 +22,9 @@ public class Jp_TimeTable extends javax.swing.JPanel {
         initComponents();
 
         jTable1.setBackground(Color.yellow);
-        try {
-            String[] ar = {"Subject", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
 
-            for (int i = 0; i <= 7; i++) {
-                jTable1.getColumnModel().getColumn(i).setHeaderValue(ar[i]);
-            }
-            int j = 10;
-            String col[] = {"Pos", "Team", "P", "W", "L", "D", "MP", "GF", "GA", "GD"};
+        md_loadTimeTableHeader();
 
-            
-            DefaultTableModel tableModel = (DefaultTableModel)jTable1.getModel();
-            System.out.println("helllo"+ Arrays.toString(col));
-            int i=col.length;
-            for (int k = 0; k <= i; k++) {
-                tableModel.addRow(col);
-            }
-            //tableModel.addRow(col[0]);
-        } catch (Exception e) {
-        }
 //            jTable1.getColumnModel().getColumn(0).setHeaderValue(ar[0]);
 //            jTable1.getColumnModel().getColumn(1).setHeaderValue(ar[1]);
 //            jTable1.getColumnModel().getColumn(2).setHeaderValue(ar[2]);
@@ -49,7 +33,6 @@ public class Jp_TimeTable extends javax.swing.JPanel {
 //            jTable1.getColumnModel().getColumn(5).setHeaderValue(ar[5]);
 //            jTable1.getColumnModel().getColumn(6).setHeaderValue(ar[6]);
 //            System.out.println(Arrays.toString(ar));
-
 //        jTable1.getColumnModel().getColumn(0).setHeaderValue("Monday");
 //        jTable1.getColumnModel().getColumn(1).setHeaderValue("Tuesday");
 //        jTable1.getColumnModel().getColumn(2).setHeaderValue("Wednesday");
@@ -141,4 +124,30 @@ public class Jp_TimeTable extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
+
+    private void md_loadTimeTableHeader() {
+
+        try {
+            String[] ar = {"Subject", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
+
+            for (int i = 0; i <= 7; i++) {
+                jTable1.getColumnModel().getColumn(i).setHeaderValue(ar[i]);
+            }
+            int j = 10;
+            String col[] = {"Pos", "Team", "P", "W", "L", "D", "MP", "GF", "GA", "GD"};
+
+            DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+            System.out.println("helllo" + Arrays.toString(col));
+            int i = col.length;
+            for (int k = 0; k <= i; k++) {
+                System.out.println("Col is: "+k);
+                System.out.println("Col is: "+col);
+                tableModel.addRow(col);
+            }
+            //tableModel.addRow(col[0]);
+        } catch (Exception e) {
+        }
+
+    }
+
 }

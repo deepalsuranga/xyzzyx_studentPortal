@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package www.fourgenius.www.sp;
+package test;
 
+import www.fourgenius.www.sp.Jp_MyInformation;
+import www.fourgenius.www.sp.Jp_TimeTable;
 import static www.fourgenius.www.sp.Jf_MainFrame.mainPanel;
 
 /**
@@ -18,8 +20,7 @@ public class Jp_MainMenu extends javax.swing.JPanel {
      */
     public Jp_MainMenu() {
         initComponents();
-        
-        
+
     }
 
     /**
@@ -266,48 +267,49 @@ public class Jp_MainMenu extends javax.swing.JPanel {
     private void bt_timeTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_timeTableActionPerformed
 
         Jp_TimeTable tt = new Jp_TimeTable();
+
         if (tt == null) {
+
             mainPanel.removeAll();
             revalidate();
             tt = new Jp_TimeTable();
             tt.setVisible(true);
             mainPanel.add(tt);
             revalidate();
-            updateUI();
         } else {
             mainPanel.removeAll();
             revalidate();
             tt.setVisible(true);
             mainPanel.add(tt);
             revalidate();
-            updateUI();
+            
         }
 
     }//GEN-LAST:event_bt_timeTableActionPerformed
 
     private void bt_myInfoemationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_myInfoemationActionPerformed
-        Jp_MyInformation myInformation = new Jp_MyInformation();
-        try {
-            if (myInformation == null) {
-
-                mainPanel.removeAll();
-                revalidate();
-                myInformation = new Jp_MyInformation();
-                myInformation.setVisible(true);
-                mainPanel.add(myInformation);
-                revalidate();
-
-            } else {
-                mainPanel.removeAll();
-                revalidate();
-                myInformation.setVisible(true);
-                mainPanel.add(myInformation);
-                revalidate();
-
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        Jp_MyInformation myInformation = new Jp_MyInformation();
+//        try {
+//            if (myInformation == null) {
+//
+//                mainPanel.removeAll();
+//                revalidate();
+//                myInformation = new Jp_MyInformation();
+//                myInformation.setVisible(true);
+//                mainPanel.add(myInformation);
+//                revalidate();
+//
+//            } else {
+//                mainPanel.removeAll();
+//                revalidate();
+//                myInformation.setVisible(true);
+//                mainPanel.add(myInformation);
+//                revalidate();
+//
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
     }//GEN-LAST:event_bt_myInfoemationActionPerformed

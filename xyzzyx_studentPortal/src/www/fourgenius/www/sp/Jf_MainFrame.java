@@ -5,11 +5,9 @@
  */
 package www.fourgenius.www.sp;
 
-import java.util.Arrays;
-import java.util.Vector;
 import javax.swing.ImageIcon;
-import static www.fourgenius.www.sp.Jp_MainMenu.lb_load_email;
-import static www.fourgenius.www.sp.Jp_MainMenu.lb_load_id;
+import test.Jp_MainMenu;
+import static www.fourgenius.www.sp.Jf_MainFrame.*;
 
 /**
  *
@@ -17,16 +15,19 @@ import static www.fourgenius.www.sp.Jp_MainMenu.lb_load_id;
  */
 public class Jf_MainFrame extends javax.swing.JFrame {
 
-    public static String Emailget;
+    static String Emailget;
     /*
      * Creates new form jf_MainFrame
      */
 
-    public Jf_MainFrame() {
-        initComponents();
-        firstLoad();
-        Emailget = lb_load_MainEmail.getText();
+    public Jf_MainFrame(String load_email) {
 
+        initComponents();
+
+        //firstLoad();
+        lb_load_email.setText(load_email);
+        lb_load_MainEmail.setText(load_email);
+        load_email = Emailget;
     }
 
     /**
@@ -44,6 +45,22 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         lb_load_MainEmail = new javax.swing.JLabel();
         lb_load_home = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
+        main_Amanu = new javax.swing.JPanel();
+        jPanel5 = new javax.swing.JPanel();
+        lb_image_load = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        lb_load_name = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        lb_load_email = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        lb_load_id = new javax.swing.JLabel();
+        bt_examResult = new javax.swing.JButton();
+        bt_timeTable = new javax.swing.JButton();
+        bt_myInfoemation = new javax.swing.JButton();
+        bt_myPracticals = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1366, 768));
@@ -88,6 +105,7 @@ public class Jf_MainFrame extends javax.swing.JFrame {
 
         lb_load_home.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lb_load_home.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/imagess/ic_home_white_24dp_1x.png"))); // NOI18N
+        lb_load_home.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         lb_load_home.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 lb_load_homeMouseClicked(evt);
@@ -119,6 +137,223 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         mainPanel.setMaximumSize(new java.awt.Dimension(1366, 732));
         mainPanel.setMinimumSize(new java.awt.Dimension(1366, 732));
         mainPanel.setLayout(new java.awt.CardLayout());
+
+        main_Amanu.setBackground(new java.awt.Color(158, 158, 158));
+        main_Amanu.setMaximumSize(new java.awt.Dimension(1366, 732));
+        main_Amanu.setMinimumSize(new java.awt.Dimension(1366, 732));
+
+        jPanel5.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+
+        lb_image_load.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lb_image_load.setIcon(new javax.swing.ImageIcon(getClass().getResource("/photos/h.jpg"))); // NOI18N
+        lb_image_load.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        lb_image_load.setMaximumSize(new java.awt.Dimension(413, 531));
+        lb_image_load.setMinimumSize(new java.awt.Dimension(413, 531));
+        lb_image_load.setPreferredSize(new java.awt.Dimension(413, 531));
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb_image_load, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lb_image_load, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        jPanel6.setBackground(new java.awt.Color(189, 189, 189));
+
+        lb_load_name.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lb_load_name.setForeground(new java.awt.Color(31, 31, 31));
+        lb_load_name.setText("Full Name");
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Full Name:");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel1)
+                    .addComponent(lb_load_name, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_load_name)
+                .addContainerGap())
+        );
+
+        jPanel7.setBackground(new java.awt.Color(189, 189, 189));
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Email:");
+
+        lb_load_email.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lb_load_email.setForeground(new java.awt.Color(31, 31, 31));
+        lb_load_email.setText("Email");
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel3)
+                    .addComponent(lb_load_email, javax.swing.GroupLayout.DEFAULT_SIZE, 300, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_load_email)
+                .addContainerGap())
+        );
+
+        jPanel8.setBackground(new java.awt.Color(189, 189, 189));
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Student ID:");
+
+        lb_load_id.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lb_load_id.setForeground(new java.awt.Color(31, 31, 31));
+        lb_load_id.setText("ID");
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
+                    .addComponent(lb_load_id, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lb_load_id)
+                .addContainerGap())
+        );
+
+        bt_examResult.setBackground(new java.awt.Color(0, 230, 118));
+        bt_examResult.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_examResult.setForeground(new java.awt.Color(255, 255, 255));
+        bt_examResult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
+        bt_examResult.setText("My Exams &  Results");
+        bt_examResult.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_examResult.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_examResult.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+
+        bt_timeTable.setBackground(new java.awt.Color(0, 230, 118));
+        bt_timeTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_timeTable.setForeground(new java.awt.Color(255, 255, 255));
+        bt_timeTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
+        bt_timeTable.setText("My Time Tables");
+        bt_timeTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_timeTable.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_timeTable.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_timeTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_timeTableActionPerformed(evt);
+            }
+        });
+
+        bt_myInfoemation.setBackground(new java.awt.Color(0, 230, 118));
+        bt_myInfoemation.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_myInfoemation.setForeground(new java.awt.Color(255, 255, 255));
+        bt_myInfoemation.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
+        bt_myInfoemation.setText("My Informations");
+        bt_myInfoemation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_myInfoemation.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_myInfoemation.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_myInfoemation.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_myInfoemationActionPerformed(evt);
+            }
+        });
+
+        bt_myPracticals.setBackground(new java.awt.Color(0, 230, 118));
+        bt_myPracticals.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_myPracticals.setForeground(new java.awt.Color(255, 255, 255));
+        bt_myPracticals.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
+        bt_myPracticals.setText("My Practicals");
+        bt_myPracticals.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_myPracticals.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_myPracticals.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+
+        javax.swing.GroupLayout main_AmanuLayout = new javax.swing.GroupLayout(main_Amanu);
+        main_Amanu.setLayout(main_AmanuLayout);
+        main_AmanuLayout.setHorizontalGroup(
+            main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(main_AmanuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(main_AmanuLayout.createSequentialGroup()
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(main_AmanuLayout.createSequentialGroup()
+                        .addComponent(bt_examResult, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_timeTable, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_myInfoemation, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_myPracticals, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(206, Short.MAX_VALUE))
+        );
+        main_AmanuLayout.setVerticalGroup(
+            main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(main_AmanuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(main_AmanuLayout.createSequentialGroup()
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(99, 99, 99)
+                .addGroup(main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(bt_examResult, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_timeTable, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_myInfoemation, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_myPracticals, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(197, Short.MAX_VALUE))
+        );
+
+        mainPanel.add(main_Amanu, "card2");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -156,7 +391,29 @@ public class Jf_MainFrame extends javax.swing.JFrame {
 
     private void lb_load_homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_homeMouseClicked
 
-        firstLoad();
+       
+        try {
+           
+            if (main_Amanu == null) {
+
+                mainPanel.removeAll();
+                revalidate();
+                
+                main_Amanu.setVisible(true);
+                mainPanel.add(main_Amanu);
+                revalidate();
+                //Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
+
+            } else {
+                mainPanel.removeAll();
+                revalidate();
+                main_Amanu.setVisible(true);
+                mainPanel.add(main_Amanu);
+                revalidate();
+                //Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
+            }
+        } catch (Exception e) {
+        }
 
     }//GEN-LAST:event_lb_load_homeMouseClicked
 
@@ -168,7 +425,7 @@ public class Jf_MainFrame extends javax.swing.JFrame {
 
     private void lb_load_MainEmailMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_MainEmailMouseExited
 
-        lb_load_MainEmail.setText(Emailget);
+        lb_load_MainEmail.setText(lb_load_email.getText());
 
     }//GEN-LAST:event_lb_load_MainEmailMouseExited
 
@@ -179,6 +436,56 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         this.dispose();
 
     }//GEN-LAST:event_lb_load_MainEmailMouseClicked
+
+    private void bt_timeTableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_timeTableActionPerformed
+
+        Jp_TimeTable tt = new Jp_TimeTable();
+
+        if (tt == null) {
+
+            mainPanel.removeAll();
+            revalidate();
+            tt = new Jp_TimeTable();
+            tt.setVisible(true);
+            mainPanel.add(tt);
+            revalidate();
+        } else {
+            mainPanel.removeAll();
+            revalidate();
+            tt.setVisible(true);
+            mainPanel.add(tt);
+            revalidate();
+
+        }
+    }//GEN-LAST:event_bt_timeTableActionPerformed
+
+    private void bt_myInfoemationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_myInfoemationActionPerformed
+        Jp_MyInformation myInformation = new Jp_MyInformation();
+        try {
+            //System.out.println("ttttttttttttttttttt: "+lb_load_MainEmail.getText());
+            if (myInformation == null) {
+
+                mainPanel.removeAll();
+                revalidate();
+                myInformation = new Jp_MyInformation();
+                myInformation.setVisible(true);
+                mainPanel.add(myInformation);
+                revalidate();
+                Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
+
+            } else {
+                mainPanel.removeAll();
+                revalidate();
+                myInformation.setVisible(true);
+                mainPanel.add(myInformation);
+                revalidate();
+                Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }//GEN-LAST:event_bt_myInfoemationActionPerformed
 
     /**
      * @param args the command line arguments
@@ -210,44 +517,61 @@ public class Jf_MainFrame extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new Jf_MainFrame().setVisible(true);
+            new Jf_MainFrame(Emailget).setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_examResult;
+    private javax.swing.JButton bt_myInfoemation;
+    private javax.swing.JButton bt_myPracticals;
+    private javax.swing.JButton bt_timeTable;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JLabel lb_image_load;
     public static javax.swing.JLabel lb_load_MainEmail;
+    public static javax.swing.JLabel lb_load_email;
     private javax.swing.JLabel lb_load_home;
+    public static javax.swing.JLabel lb_load_id;
+    public static javax.swing.JLabel lb_load_name;
     public static javax.swing.JPanel mainPanel;
+    public javax.swing.JPanel main_Amanu;
     // End of variables declaration//GEN-END:variables
 
-    static void firstLoad() {
-        Jp_MainMenu PanelA = new Jp_MainMenu();
-        if (PanelA == null) {
-            PanelA = new Jp_MainMenu();
-            mainPanel.removeAll();
-            mainPanel.repaint();
-            mainPanel.revalidate();
-            mainPanel.add(PanelA);
-            mainPanel.repaint();
-            mainPanel.revalidate();
-        } else {
-            mainPanel.removeAll();
-            mainPanel.repaint();
-            mainPanel.revalidate();
-            mainPanel.add(PanelA);
-            mainPanel.repaint();
-            mainPanel.revalidate();
-        }
-    }
-
-    public static void loadEmailM(String load_email, String load_ID) {
-        Emailget = load_email;
-        lb_load_MainEmail.setText(load_email);
-
-    }
+//    static void firstLoad() {
+//
+//       // new Jf_MainFrame(Emailget).main_Amanu PanelA=new main_Amanu();
+//        if (PanelA == null) {
+//            PanelA = new main_Amanu();
+//            mainPanel.removeAll();
+//            mainPanel.repaint();
+//            mainPanel.revalidate();
+//            mainPanel.add(PanelA);
+//            mainPanel.repaint();
+//            mainPanel.revalidate();
+//        } else {
+//            mainPanel.removeAll();
+//            mainPanel.repaint();
+//            mainPanel.revalidate();
+//            mainPanel.add(PanelA);
+//            mainPanel.repaint();
+//            mainPanel.revalidate();
+//        }
+//        
+//    }
+//    public static void loadEmailM(String load_email, String load_ID) {
+//        Emailget = load_email;
+//        lb_load_MainEmail.setText(load_email);
+//
+//    }
     /*
      
      */

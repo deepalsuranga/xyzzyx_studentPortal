@@ -23,6 +23,7 @@ public class Jp_MyInformation extends javax.swing.JPanel {
     public Jp_MyInformation() {
         initComponents();
         //lb_correct.setIcon(null);
+        //loadEmailInfor(lb_load_MainEmail);
     }
 
     /**
@@ -55,7 +56,7 @@ public class Jp_MyInformation extends javax.swing.JPanel {
         jPasswordField3 = new javax.swing.JPasswordField();
         lb_load_fullName = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        lb_load_email = new javax.swing.JLabel();
+        lb_load_email_infor = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         lb_load_ID = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -247,9 +248,9 @@ public class Jp_MyInformation extends javax.swing.JPanel {
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Full Name:");
 
-        lb_load_email.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        lb_load_email.setForeground(new java.awt.Color(31, 31, 31));
-        lb_load_email.setText("Email Address");
+        lb_load_email_infor.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
+        lb_load_email_infor.setForeground(new java.awt.Color(31, 31, 31));
+        lb_load_email_infor.setText("Email Address");
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -338,7 +339,7 @@ public class Jp_MyInformation extends javax.swing.JPanel {
                             .addComponent(jLabel4)
                             .addComponent(lb_load_fullName, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
                             .addComponent(jLabel5)
-                            .addComponent(lb_load_email, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(lb_load_email_infor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel6)
                             .addComponent(lb_load_ID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel7)
@@ -365,7 +366,7 @@ public class Jp_MyInformation extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lb_load_email)
+                                .addComponent(lb_load_email_infor)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -464,7 +465,7 @@ public class Jp_MyInformation extends javax.swing.JPanel {
     private javax.swing.JLabel lb_load_cs1;
     private javax.swing.JLabel lb_load_cs2;
     private javax.swing.JLabel lb_load_cs3;
-    private javax.swing.JLabel lb_load_email;
+    public static javax.swing.JLabel lb_load_email_infor;
     private javax.swing.JLabel lb_load_fullName;
     private javax.swing.JLabel lb_load_name;
     private javax.swing.JLabel lb_load_name1;
@@ -474,4 +475,11 @@ public class Jp_MyInformation extends javax.swing.JPanel {
     private javax.swing.JTextField tf_Wasagama;
     private javax.swing.JTextField tf_firstName;
     // End of variables declaration//GEN-END:variables
+
+    public static void loadEmailInfor(String email){
+    
+        lb_load_email_infor.setText(email);
+    
+    }
+    
 }

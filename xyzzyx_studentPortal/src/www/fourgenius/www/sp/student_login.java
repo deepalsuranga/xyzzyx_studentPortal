@@ -5,6 +5,7 @@
  */
 package www.fourgenius.www.sp;
 
+import test.Jp_MainMenu;
 import FourGenius.MC_JavaDataBaseConnection;
 import java.awt.Color;
 import java.awt.Event;
@@ -18,6 +19,7 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.border.Border;
+import static test.Jp_MainMenu.loadEmail;
 import www.fourgenius.www.foegetPassword.Jf_forgetPassword;
 
 /**
@@ -508,10 +510,10 @@ public class student_login extends javax.swing.JFrame {
 
                 if (resultSet.next()) {
                     if (resultSet2.next()) {
-                        Jf_MainFrame mainFrame = new Jf_MainFrame();
+                        Jf_MainFrame mainFrame = new Jf_MainFrame(userEmail);
                         mainFrame.setVisible(true);
-                        Jp_MainMenu.loadEmail(userEmail, userEmail);
-                        Jf_MainFrame.loadEmailM(userEmail, userEmail);
+                        //loadEmail(userEmail, userEmail);
+                        
 
                         this.dispose();
                     } else {
