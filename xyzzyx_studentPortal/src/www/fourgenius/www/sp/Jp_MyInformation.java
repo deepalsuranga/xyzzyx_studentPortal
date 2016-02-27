@@ -5,7 +5,11 @@
  */
 package www.fourgenius.www.sp;
 
+import FourGenius.MC_JavaDataBaseConnection;
+import java.awt.GridLayout;
 import java.io.File;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -24,6 +28,8 @@ public class Jp_MyInformation extends javax.swing.JPanel {
         initComponents();
         //lb_correct.setIcon(null);
         //loadEmailInfor(lb_load_MainEmail);
+        md_loadCousers();
+        
     }
 
     /**
@@ -61,13 +67,11 @@ public class Jp_MyInformation extends javax.swing.JPanel {
         lb_load_ID = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        lb_load_cs1 = new javax.swing.JLabel();
-        lb_load_cs2 = new javax.swing.JLabel();
-        lb_load_cs3 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         lb_correct = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         lb_imageLoad = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(236, 64, 122));
         setMaximumSize(new java.awt.Dimension(1366, 732));
@@ -268,18 +272,6 @@ public class Jp_MyInformation extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Course:");
 
-        lb_load_cs1.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        lb_load_cs1.setForeground(new java.awt.Color(31, 31, 31));
-        lb_load_cs1.setText("Course 1");
-
-        lb_load_cs2.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        lb_load_cs2.setForeground(new java.awt.Color(31, 31, 31));
-        lb_load_cs2.setText("Course 2");
-
-        lb_load_cs3.setFont(new java.awt.Font("Tahoma", 0, 13)); // NOI18N
-        lb_load_cs3.setForeground(new java.awt.Color(31, 31, 31));
-        lb_load_cs3.setText("Course 3");
-
         jPanel5.setBackground(new java.awt.Color(236, 64, 122));
 
         lb_correct.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -322,6 +314,8 @@ public class Jp_MyInformation extends javax.swing.JPanel {
                 .addGap(0, 1, Short.MAX_VALUE))
         );
 
+        jPanel1.setLayout(new java.awt.GridLayout(3, 1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -334,18 +328,20 @@ public class Jp_MyInformation extends javax.swing.JPanel {
                             .addComponent(jButton7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(lb_load_fullName, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
-                            .addComponent(jLabel5)
-                            .addComponent(lb_load_email_infor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel6)
-                            .addComponent(lb_load_ID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7)
-                            .addComponent(lb_load_cs1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lb_load_cs2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lb_load_cs3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(lb_load_fullName, javax.swing.GroupLayout.DEFAULT_SIZE, 368, Short.MAX_VALUE)
+                                    .addComponent(jLabel5)
+                                    .addComponent(lb_load_email_infor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel6)
+                                    .addComponent(lb_load_ID, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(jLabel7)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGap(306, 306, 306))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -355,11 +351,12 @@ public class Jp_MyInformation extends javax.swing.JPanel {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
+                .addContainerGap(49, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(jLabel4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(lb_load_fullName)
@@ -374,19 +371,15 @@ public class Jp_MyInformation extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lb_load_cs1)
+                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lb_load_cs2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lb_load_cs3))
-                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(265, 265, 265)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(15, 15, 15)
+                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(259, 259, 259)
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -451,6 +444,7 @@ public class Jp_MyInformation extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -462,9 +456,6 @@ public class Jp_MyInformation extends javax.swing.JPanel {
     private javax.swing.JLabel lb_correct;
     private javax.swing.JLabel lb_imageLoad;
     private javax.swing.JLabel lb_load_ID;
-    private javax.swing.JLabel lb_load_cs1;
-    private javax.swing.JLabel lb_load_cs2;
-    private javax.swing.JLabel lb_load_cs3;
     public static javax.swing.JLabel lb_load_email_infor;
     private javax.swing.JLabel lb_load_fullName;
     private javax.swing.JLabel lb_load_name;
@@ -480,6 +471,20 @@ public class Jp_MyInformation extends javax.swing.JPanel {
     
         lb_load_email_infor.setText(email);
     
+    }
+
+    private void md_loadCousers() {
+        try {
+            ArrayList<String> result=new ArrayList<>();
+            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT a.stu_info_personal_course FROM stu_info_personal a LEFT JOIN stu_info_contact b ON a.stu_user_info_id=b.stu_user_info_id  WHERE b.stu_info_contact_email='"+lb_load_email_infor.getText()+"'");
+            
+            for (int i = 0;rs.next(); i++) {
+                result.add(rs.getString(i));
+            System.out.println(rs.getString(i));
+            }
+        } catch (Exception e) {
+        }
+       
     }
     
 }

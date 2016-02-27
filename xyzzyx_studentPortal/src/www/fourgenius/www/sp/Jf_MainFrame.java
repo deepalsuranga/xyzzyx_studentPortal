@@ -5,6 +5,7 @@
  */
 package www.fourgenius.www.sp;
 
+import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
 import test.Jp_MainMenu;
 import static www.fourgenius.www.sp.Jf_MainFrame.*;
@@ -392,28 +393,46 @@ public class Jf_MainFrame extends javax.swing.JFrame {
     private void lb_load_homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_homeMouseClicked
 
        
-        try {
-           
-            if (main_Amanu == null) {
+        mainPanel.removeAll();
+        GroupLayout layout = new GroupLayout(mainPanel);
+        mainPanel.setLayout(layout);
 
-                mainPanel.removeAll();
-                revalidate();
-                
-                main_Amanu.setVisible(true);
-                mainPanel.add(main_Amanu);
-                revalidate();
-                //Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
+        
 
-            } else {
-                mainPanel.removeAll();
-                revalidate();
-                main_Amanu.setVisible(true);
-                mainPanel.add(main_Amanu);
-                revalidate();
-                //Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
-            }
-        } catch (Exception e) {
-        }
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(main_Amanu, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(main_Amanu, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+       
+        System.gc();
+
+
+
+
+
+
+//        try {
+//           
+//            if (main_Amanu == null) {
+//
+//                mainPanel.removeAll();
+//                revalidate();
+//                
+//                main_Amanu.setVisible(true);
+//                mainPanel.add(main_Amanu);
+//                revalidate();
+//                //Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
+//
+//            } else {
+//                mainPanel.removeAll();
+//                revalidate();
+//                main_Amanu.setVisible(true);
+//                mainPanel.add(main_Amanu);
+//                revalidate();
+//                //Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
+//            }
+//        } catch (Exception e) {
+//        }
 
     }//GEN-LAST:event_lb_load_homeMouseClicked
 
@@ -441,49 +460,79 @@ public class Jf_MainFrame extends javax.swing.JFrame {
 
         Jp_TimeTable tt = new Jp_TimeTable();
 
-        if (tt == null) {
+ mainPanel.removeAll();
+        GroupLayout layout = new GroupLayout(mainPanel);
+        mainPanel.setLayout(layout);
 
-            mainPanel.removeAll();
-            revalidate();
-            tt = new Jp_TimeTable();
-            tt.setVisible(true);
-            mainPanel.add(tt);
-            revalidate();
-        } else {
-            mainPanel.removeAll();
-            revalidate();
-            tt.setVisible(true);
-            mainPanel.add(tt);
-            revalidate();
+        
 
-        }
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(tt, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(tt, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+       
+        System.gc();
+
+
+//        if (tt == null) {
+//
+//            mainPanel.removeAll();
+//            revalidate();
+//            tt = new Jp_TimeTable();
+//            tt.setVisible(true);
+//            mainPanel.add(tt);
+//            revalidate();
+//        } else {
+//            mainPanel.removeAll();
+//            revalidate();
+//            tt.setVisible(true);
+//            mainPanel.add(tt);
+//            revalidate();
+//
+//        }
     }//GEN-LAST:event_bt_timeTableActionPerformed
 
     private void bt_myInfoemationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_myInfoemationActionPerformed
         Jp_MyInformation myInformation = new Jp_MyInformation();
-        try {
-            //System.out.println("ttttttttttttttttttt: "+lb_load_MainEmail.getText());
-            if (myInformation == null) {
 
-                mainPanel.removeAll();
-                revalidate();
-                myInformation = new Jp_MyInformation();
-                myInformation.setVisible(true);
-                mainPanel.add(myInformation);
-                revalidate();
-                Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
 
-            } else {
-                mainPanel.removeAll();
-                revalidate();
-                myInformation.setVisible(true);
-                mainPanel.add(myInformation);
-                revalidate();
-                Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+mainPanel.removeAll();
+        GroupLayout layout = new GroupLayout(mainPanel);
+        mainPanel.setLayout(layout);
+
+        
+
+        layout.setHorizontalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(myInformation, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        layout.setVerticalGroup(
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(myInformation, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
+        System.gc();
+
+
+//        try {
+//            //System.out.println("ttttttttttttttttttt: "+lb_load_MainEmail.getText());
+//            if (myInformation == null) {
+//
+//                mainPanel.removeAll();
+//                revalidate();
+//                myInformation = new Jp_MyInformation();
+//                myInformation.setVisible(true);
+//                mainPanel.add(myInformation);
+//                revalidate();
+//                Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
+//
+//            } else {
+//                mainPanel.removeAll();
+//                revalidate();
+//                myInformation.setVisible(true);
+//                mainPanel.add(myInformation);
+//                revalidate();
+//                Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
+//            }
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
     }//GEN-LAST:event_bt_myInfoemationActionPerformed
 
