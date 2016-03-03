@@ -6,14 +6,14 @@
 package www.fourgenius.www.sp;
 
 import FourGenius.MC_JavaDataBaseConnection;
-import java.awt.GridLayout;
 import java.io.File;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
+import static www.fourgenius.www.sp.Jf_MainFrame.lb_load_MainEmail;
 
 /**
  *
@@ -28,8 +28,11 @@ public class Jp_MyInformation extends javax.swing.JPanel {
         initComponents();
         //lb_correct.setIcon(null);
         //loadEmailInfor(lb_load_MainEmail);
-        md_loadCousers();
-        
+        // md_loadCousers();
+
+        md_NameChange(false);
+        md_load_data();
+
     }
 
     /**
@@ -46,11 +49,12 @@ public class Jp_MyInformation extends javax.swing.JPanel {
         jPanel4 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         tf_firstName = new javax.swing.JTextField();
-        jButton6 = new javax.swing.JButton();
+        bt_changeName = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         tf_Wasagama = new javax.swing.JTextField();
         lb_load_name = new javax.swing.JLabel();
         tf_OtherName = new javax.swing.JTextField();
+        cb_changeName = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
         lb_load_name1 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
@@ -93,10 +97,10 @@ public class Jp_MyInformation extends javax.swing.JPanel {
 
         tf_firstName.setText("First Name");
 
-        jButton6.setText("Change Name");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        bt_changeName.setText("Change Name");
+        bt_changeName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                bt_changeNameActionPerformed(evt);
             }
         });
 
@@ -112,31 +116,48 @@ public class Jp_MyInformation extends javax.swing.JPanel {
 
         tf_OtherName.setText("Other Name");
 
+        cb_changeName.setBackground(new java.awt.Color(236, 64, 122));
+        cb_changeName.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        cb_changeName.setForeground(new java.awt.Color(255, 255, 255));
+        cb_changeName.setText("Change Name");
+        cb_changeName.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cb_changeNameMouseClicked(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                cb_changeNameMouseReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(lb_load_name, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(tf_Wasagama)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(tf_firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                            .addComponent(tf_OtherName, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(cb_changeName))
+                    .addComponent(lb_load_name, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(tf_Wasagama)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 215, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(tf_OtherName, javax.swing.GroupLayout.PREFERRED_SIZE, 317, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_changeName, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(cb_changeName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(lb_load_name)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -145,7 +166,7 @@ public class Jp_MyInformation extends javax.swing.JPanel {
                     .addComponent(tf_firstName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(bt_changeName, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_OtherName, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -401,15 +422,17 @@ public class Jp_MyInformation extends javax.swing.JPanel {
 
     }//GEN-LAST:event_jButton7ActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void bt_changeNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_changeNameActionPerformed
 
+        md_NameChange(false);
         //src\images\img_login
         lb_correct.setIcon(new ImageIcon("src\\src\\images\\img_login\\correctBox.png"));
-        String wasagama=tf_Wasagama.getText().trim();
-        String firstName=tf_firstName.getText().trim();
-        String OtherName=tf_OtherName.getText().trim();
+        String wasagama = tf_Wasagama.getText().trim();
+        String firstName = tf_firstName.getText().trim();
+        String OtherName = tf_OtherName.getText().trim();
+
         
-        String FullNAme=wasagama.concat(" "+firstName+" "+OtherName);
+        String FullNAme = wasagama.concat(" " + firstName + " " + OtherName);
         lb_load_fullName.setText(FullNAme);
         try {
 
@@ -426,17 +449,32 @@ public class Jp_MyInformation extends javax.swing.JPanel {
             }).start();
 
         } catch (Exception e) {
-            
+
+        }
+
+
+    }//GEN-LAST:event_bt_changeNameActionPerformed
+
+    private void cb_changeNameMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_changeNameMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_changeNameMouseClicked
+
+    private void cb_changeNameMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cb_changeNameMouseReleased
+
+        if (cb_changeName.isEnabled()) {
+            md_NameChange(true);
+        }else{
+            md_NameChange(false);
         }
         
-
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_cb_changeNameMouseReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton bt_changeName;
+    private javax.swing.JCheckBox cb_changeName;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -467,24 +505,54 @@ public class Jp_MyInformation extends javax.swing.JPanel {
     private javax.swing.JTextField tf_firstName;
     // End of variables declaration//GEN-END:variables
 
-    public static void loadEmailInfor(String email){
-    
+    public static void loadEmailInfor(String email) {
+
         lb_load_email_infor.setText(email);
-    
+
     }
 
     private void md_loadCousers() {
         try {
-            ArrayList<String> result=new ArrayList<>();
-            ResultSet rs=MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT a.stu_info_personal_course FROM stu_info_personal a LEFT JOIN stu_info_contact b ON a.stu_user_info_id=b.stu_user_info_id  WHERE b.stu_info_contact_email='"+lb_load_email_infor.getText()+"'");
-            
-            for (int i = 0;rs.next(); i++) {
+            ArrayList<String> result = new ArrayList<>();
+            ResultSet rs = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery("SELECT a.stu_info_personal_course FROM stu_info_personal a LEFT JOIN stu_info_contact b ON a.stu_user_info_id=b.stu_user_info_id  WHERE b.stu_info_contact_email='" + lb_load_email_infor.getText() + "'");
+
+            for (int i = 0; rs.next(); i++) {
                 result.add(rs.getString(i));
-            System.out.println(rs.getString(i));
+                System.out.println(rs.getString(i));
             }
         } catch (Exception e) {
         }
-       
+
     }
-    
+
+    private void md_load_data() {
+
+        String useEmail = lb_load_MainEmail.getText();
+        
+        try {
+            ResultSet rs_loadData = MC_JavaDataBaseConnection.myConnection().createStatement().executeQuery(
+                    "SELECT * FROM stu_info_name a LEFT JOIN stu_info_contact b ON a.stu_user_info_id=b.stu_user_info_id  WHERE b.stu_info_contact_email='" + useEmail + "'");
+            while (rs_loadData.next()) {
+                String iName = rs_loadData.getString("a.stu_info_name_sirName");
+                String fName = rs_loadData.getString("a.stu_info_name_first_name");
+                String sName = rs_loadData.getString("a.stu_info_name_last_name");
+                String id = rs_loadData.getString("a.stu_user_info_id");
+
+                lb_load_fullName.setText(iName + " " + fName + " " + sName);
+                lb_load_ID.setText(id);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "NO Data Loading Error! Contact Administrator!");
+        }
+    }
+
+    private void md_NameChange(boolean  condition) {
+       tf_Wasagama.setEnabled(condition);
+       tf_firstName.setEnabled(condition);
+       tf_OtherName.setEnabled(condition);
+       bt_changeName.setEnabled(condition);
+        
+        
+    }
+
 }

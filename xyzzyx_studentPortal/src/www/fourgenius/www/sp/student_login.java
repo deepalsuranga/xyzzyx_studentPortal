@@ -560,7 +560,7 @@ public class student_login extends javax.swing.JFrame {
             MC_JavaDataBaseConnection.myConnection().close();
 
         } catch (SQLException ex) {
-            Logger.getLogger(student_login.class.getName()).log(Level.SEVERE, null, ex);
+            ex.printStackTrace();
         }
 
     }

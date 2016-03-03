@@ -7,7 +7,6 @@ package www.fourgenius.www.sp;
 
 import javax.swing.GroupLayout;
 import javax.swing.ImageIcon;
-import test.Jp_MainMenu;
 import static www.fourgenius.www.sp.Jf_MainFrame.*;
 
 /**
@@ -58,10 +57,11 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         lb_load_id = new javax.swing.JLabel();
-        bt_examResult = new javax.swing.JButton();
-        bt_timeTable = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
         bt_myInfoemation = new javax.swing.JButton();
+        bt_timeTable = new javax.swing.JButton();
         bt_myPracticals = new javax.swing.JButton();
+        bt_examResult = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1366, 768));
@@ -263,28 +263,7 @@ public class Jf_MainFrame extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        bt_examResult.setBackground(new java.awt.Color(0, 230, 118));
-        bt_examResult.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        bt_examResult.setForeground(new java.awt.Color(255, 255, 255));
-        bt_examResult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
-        bt_examResult.setText("My Exams &  Results");
-        bt_examResult.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        bt_examResult.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bt_examResult.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
-
-        bt_timeTable.setBackground(new java.awt.Color(0, 230, 118));
-        bt_timeTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        bt_timeTable.setForeground(new java.awt.Color(255, 255, 255));
-        bt_timeTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
-        bt_timeTable.setText("My Time Tables");
-        bt_timeTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
-        bt_timeTable.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        bt_timeTable.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
-        bt_timeTable.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                bt_timeTableActionPerformed(evt);
-            }
-        });
+        jPanel3.setBackground(new java.awt.Color(158, 158, 158));
 
         bt_myInfoemation.setBackground(new java.awt.Color(0, 230, 118));
         bt_myInfoemation.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -294,9 +273,25 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         bt_myInfoemation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         bt_myInfoemation.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         bt_myInfoemation.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_myInfoemation.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
         bt_myInfoemation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_myInfoemationActionPerformed(evt);
+            }
+        });
+
+        bt_timeTable.setBackground(new java.awt.Color(0, 230, 118));
+        bt_timeTable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_timeTable.setForeground(new java.awt.Color(255, 255, 255));
+        bt_timeTable.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
+        bt_timeTable.setText("My Time Tables");
+        bt_timeTable.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_timeTable.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_timeTable.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_timeTable.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_timeTable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_timeTableActionPerformed(evt);
             }
         });
 
@@ -308,50 +303,94 @@ public class Jf_MainFrame extends javax.swing.JFrame {
         bt_myPracticals.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         bt_myPracticals.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         bt_myPracticals.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_myPracticals.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_myPracticals.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_myPracticalsActionPerformed(evt);
+            }
+        });
+
+        bt_examResult.setBackground(new java.awt.Color(0, 230, 118));
+        bt_examResult.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        bt_examResult.setForeground(new java.awt.Color(255, 255, 255));
+        bt_examResult.setIcon(new javax.swing.ImageIcon(getClass().getResource("/src/images/img_login/studentPoetalBtnMenu.png"))); // NOI18N
+        bt_examResult.setText("My Exams &  Results");
+        bt_examResult.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
+        bt_examResult.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bt_examResult.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_examResult.setSelectedIcon(new javax.swing.ImageIcon(getClass().getResource("/studentGif.gif"))); // NOI18N
+        bt_examResult.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_examResultActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(bt_myInfoemation)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(bt_timeTable, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(bt_myPracticals, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(bt_examResult, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(bt_examResult)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(bt_myPracticals, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(bt_timeTable, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(bt_myInfoemation)))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout main_AmanuLayout = new javax.swing.GroupLayout(main_Amanu);
         main_Amanu.setLayout(main_AmanuLayout);
         main_AmanuLayout.setHorizontalGroup(
             main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(main_AmanuLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(10, 10, 10)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
                 .addGroup(main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(main_AmanuLayout.createSequentialGroup()
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(main_AmanuLayout.createSequentialGroup()
-                        .addComponent(bt_examResult, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bt_timeTable, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bt_myInfoemation, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(bt_myPracticals, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(206, Short.MAX_VALUE))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 209, Short.MAX_VALUE)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         main_AmanuLayout.setVerticalGroup(
             main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(main_AmanuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(main_AmanuLayout.createSequentialGroup()
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(99, 99, 99)
-                .addGroup(main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bt_examResult, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt_timeTable, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt_myInfoemation, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(bt_myPracticals, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(197, Short.MAX_VALUE))
+                        .addGroup(main_AmanuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(main_AmanuLayout.createSequentialGroup()
+                                .addGap(66, 66, 66)
+                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(main_AmanuLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 436, Short.MAX_VALUE))
+                    .addComponent(jPanel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         mainPanel.add(main_Amanu, "card2");
@@ -392,24 +431,16 @@ public class Jf_MainFrame extends javax.swing.JFrame {
 
     private void lb_load_homeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lb_load_homeMouseClicked
 
-       
         mainPanel.removeAll();
         GroupLayout layout = new GroupLayout(mainPanel);
         mainPanel.setLayout(layout);
-
-        
 
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(main_Amanu, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(main_Amanu, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-       
+
         System.gc();
-
-
-
-
-
 
 //        try {
 //           
@@ -460,47 +491,26 @@ public class Jf_MainFrame extends javax.swing.JFrame {
 
         Jp_TimeTable tt = new Jp_TimeTable();
 
- mainPanel.removeAll();
+        mainPanel.removeAll();
         GroupLayout layout = new GroupLayout(mainPanel);
         mainPanel.setLayout(layout);
-
-        
 
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(tt, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         layout.setVerticalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(tt, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
-       
+
         System.gc();
 
-
-//        if (tt == null) {
-//
-//            mainPanel.removeAll();
-//            revalidate();
-//            tt = new Jp_TimeTable();
-//            tt.setVisible(true);
-//            mainPanel.add(tt);
-//            revalidate();
-//        } else {
-//            mainPanel.removeAll();
-//            revalidate();
-//            tt.setVisible(true);
-//            mainPanel.add(tt);
-//            revalidate();
-//
-//        }
     }//GEN-LAST:event_bt_timeTableActionPerformed
 
     private void bt_myInfoemationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_myInfoemationActionPerformed
+
         Jp_MyInformation myInformation = new Jp_MyInformation();
 
-
-mainPanel.removeAll();
+        mainPanel.removeAll();
         GroupLayout layout = new GroupLayout(mainPanel);
         mainPanel.setLayout(layout);
-
-        
 
         layout.setHorizontalGroup(
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(myInformation, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
@@ -508,7 +518,6 @@ mainPanel.removeAll();
                 layout.createParallelGroup(GroupLayout.Alignment.LEADING).addComponent(myInformation, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         Jp_MyInformation.loadEmailInfor(lb_load_MainEmail.getText());
         System.gc();
-
 
 //        try {
 //            //System.out.println("ttttttttttttttttttt: "+lb_load_MainEmail.getText());
@@ -535,6 +544,16 @@ mainPanel.removeAll();
 //        }
 
     }//GEN-LAST:event_bt_myInfoemationActionPerformed
+
+    private void bt_examResultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_examResultActionPerformed
+
+
+    }//GEN-LAST:event_bt_examResultActionPerformed
+
+    private void bt_myPracticalsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_myPracticalsActionPerformed
+
+
+    }//GEN-LAST:event_bt_myPracticalsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -580,6 +599,7 @@ mainPanel.removeAll();
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
