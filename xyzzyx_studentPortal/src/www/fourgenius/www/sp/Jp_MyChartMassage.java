@@ -17,7 +17,7 @@ import static www.fourgenius.www.sp.Jf_MainFrame.lb_load_MainEmail;
  */
 public class Jp_MyChartMassage extends javax.swing.JPanel {
 
-    /**
+    /*
      * Creates new form jp_MyIndormation
      */
     public Jp_MyChartMassage() {
@@ -169,11 +169,11 @@ public class Jp_MyChartMassage extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setText("Online:");
 
-        jButton1.setText("Pamitha Gayashan");
+        jButton1.setText("Dineth Jayasekara");
 
         jButton2.setText("Gayum Punarjith");
 
-        jButton3.setText("Ganidu hansaka");
+        jButton3.setText("Pamitha Gayashan");
 
         jButton4.setText("Jerad Dasun");
 
